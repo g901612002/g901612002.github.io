@@ -186,7 +186,7 @@
 <li>主題設定</li>
 <li>連結 github Pages （這一定要修改）</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">type: git</div><div class="line">repo: https://github.com/yourgithubname/yourgithubname.github.io.git</div><div class="line">branch: master</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 注意：yml 格式要求嚴格，:後面只能一個空白鍵，deploy 下方的設定都要縮行！不然會報錯！</div><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: https://github.com/yourgithubname/yourgithubname.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
 </li>
 <li><p>常用指令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">// 發佈前設計</div><div class="line">hexo s        #在本機預覽網站</div><div class="line"></div><div class="line">// 發布動作：</div><div class="line">hexo clean    #清除內容（如果擔心之前的修改不徹底或是有殘留的檔案，可以先 clean 再 g）</div><div class="line">hexo g        #生成內容（發文等更新需要用）</div><div class="line">hexo d        #發佈網站</div></pre></td></tr></table></figure>
