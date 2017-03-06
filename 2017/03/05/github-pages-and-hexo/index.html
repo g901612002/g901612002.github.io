@@ -26,7 +26,7 @@
 安裝( 安裝 Hexo 之前，請先安裝 node ＸＤＤＤ)
 
 1">
-<meta property="og:updated_time" content="2017-03-06T14:32:32.000Z">
+<meta property="og:updated_time" content="2017-03-06T16:06:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="部落格：github pages + HEXO">
 <meta name="twitter:description" content="恩….最近終於下定決心要來做部落格紀錄一些工作上的事，所以想說來使用最簡單的 github pages + HEXO建立完成就順便記錄一下當一篇好了 XDDD以下就是製作說明：
@@ -224,10 +224,11 @@
 </li>
 <li><p>設定內容<br>一篇 Hexo 文章的開頭應該包括標題（Title）、分類（Category）、標籤（Tag）、發佈時間（Date）等等。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">---　</div><div class="line">title: ＃／McK &amp; Note 架站筆記：基礎篇</div><div class="line">date: 2016-4-4 14:30:00</div><div class="line">tags: </div><div class="line">- Hexo</div><div class="line">- GitHub</div><div class="line">- Markdown</div><div class="line">- NexT</div><div class="line">categories: ＃</div><div class="line">comments: true</div><div class="line">---</div><div class="line">（下續內文）</div></pre></td></tr></table></figure>
-<p><strong><em>特別注意 tags 是平行關係， categories 則有上下層關係。</em></strong></p>
+<p><code>特別注意 tags 是平行關係， categories 則有上下層關係。</code></p>
 </li>
 </ol>
 <p><strong>4. 常見 Markdown 格式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">斜體： *斜體* </div><div class="line">粗體： **粗體** </div><div class="line">粗斜體： ***粗斜體*** </div><div class="line">刪除線：~~刪除~~ </div><div class="line">引言： &gt; 引言 </div><div class="line">章節： # 章節</div><div class="line">次級章節（以此類推）： ## 次級章節</div><div class="line">表格（註1）：|一行|一行|疊|</div><div class="line">插入超連結： [超連結文字](網址) </div><div class="line">插入外部圖片： ![圖片描述](圖片網址)</div></pre></td></tr></table></figure></p>
+<p>參考：<a href="http://github.hopotwing.top/writing-hexo-blog-in-markdown/" target="_blank" rel="external">http://github.hopotwing.top/writing-hexo-blog-in-markdown/</a></p>
 <p><strong>5. 當產生分類頁或產生標籤頁</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// ~/themes/next/_config.yml</div><div class="line"></div><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  categories: /categories</div><div class="line">  #about: /about           # About 頁面沒啟用</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div><div class="line">  #commonweal: /404.html   # 公益 404 頁面不會顯示在目錄</div></pre></td></tr></table></figure>
 <p>並在 ~/source/ 底下建立相應的 /tags/ 或 /catagories/ 資料夾，並在裡面新增一個 index.md，以 tags 為例內容如下：</p>
@@ -266,6 +267,20 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/2017/03/06/前端好碰友：Jsonbin/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          前端好碰友：Jsonbin
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 
 

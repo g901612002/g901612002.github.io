@@ -151,6 +151,112 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-前端好碰友：Jsonbin" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/06/前端好碰友：Jsonbin/">前端好碰友：Jsonbin</a>
+    </h1>
+  
+
+        
+        <a href="/2017/03/06/前端好碰友：Jsonbin/" class="archive-article-date">
+  	<time datetime="2017-03-06T14:37:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>身為前端人，有許多坑可以從東玩到西，<br>當我們要試試新的framework 或是 新的技術時<br>最基本的練功方式就是做一個小小的玩意兒<br>有一項就是不可避免的，<br>那就是呼叫API 進行串接</p>
+<p>以前我們可能會用 json generator 來產生假的json<br>但那只是模擬而已。</p>
+<p>現在有很好的工具，可以模擬我們串接api時的情況<br>而且相當的好用！</p>
+<p>現在我們就來說說唄～</p>
+<p><strong>1. 進入此網站：</strong><br>使用自己的github帳號進行登入 ：<a href="https://jsonbin.org/" target="_blank" rel="external">https://jsonbin.org/</a><br><img src="https://i.imgur.com/x6pzT1J.png" width="500" title="auto"></p>
+<p>登入後，會出現這些資訊：<br><img src="https://i.imgur.com/VIZaML3.png" width="500" title="auto"></p>
+<p><strong>2. 使用Postman來操作API：</strong></p>
+<ol>
+<li><p>發出api請求有兩種開頭：</p>
+<ul>
+<li>/me</li>
+<li><p>/github 名稱</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 方法一</div><div class="line">https://jsonbin.org/me/(要取的api名稱)</div><div class="line"></div><div class="line">// 方法二</div><div class="line">https://jsonbin.org/(github名稱)/(要取的api名稱)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>發 api時，header 要帶的token（apikey）：<br> <code>{authorization: token ==apikey==}</code></p>
+</li>
+<li><p>操作動作：</p>
+<ul>
+<li>get (取單筆：api/id)</li>
+<li>post</li>
+<li>put </li>
+<li>delete</li>
+</ul>
+</li>
+</ol>
+<p><strong>3. 對某支 api 公開/改為非公開(步驟)：</strong></p>
+<ul>
+<li>改為公開：<ol>
+<li>api…/_perms</li>
+<li>動作：put (return true 就是修改成功)</li>
+</ol>
+</li>
+<li>改為非公開：<ol>
+<li>api…/_perms</li>
+<li>動作：delete (return true 就是修改成功)</li>
+</ol>
+</li>
+</ul>
+<p><strong>4. 參考影片：</strong><br><div class="video-container"><iframe src="//www.youtube.com/embed/_g4s0M4B3Rs" frameborder="0" allowfullscreen></iframe></div></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/03/06/前端好碰友：Jsonbin/">展開全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-github-pages-and-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -204,10 +310,11 @@
 </li>
 <li><p>設定內容<br>一篇 Hexo 文章的開頭應該包括標題（Title）、分類（Category）、標籤（Tag）、發佈時間（Date）等等。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">---　</div><div class="line">title: ＃／McK &amp; Note 架站筆記：基礎篇</div><div class="line">date: 2016-4-4 14:30:00</div><div class="line">tags: </div><div class="line">- Hexo</div><div class="line">- GitHub</div><div class="line">- Markdown</div><div class="line">- NexT</div><div class="line">categories: ＃</div><div class="line">comments: true</div><div class="line">---</div><div class="line">（下續內文）</div></pre></td></tr></table></figure>
-<p><strong><em>特別注意 tags 是平行關係， categories 則有上下層關係。</em></strong></p>
+<p><code>特別注意 tags 是平行關係， categories 則有上下層關係。</code></p>
 </li>
 </ol>
 <p><strong>4. 常見 Markdown 格式</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">斜體： *斜體* </div><div class="line">粗體： **粗體** </div><div class="line">粗斜體： ***粗斜體*** </div><div class="line">刪除線：~~刪除~~ </div><div class="line">引言： &gt; 引言 </div><div class="line">章節： # 章節</div><div class="line">次級章節（以此類推）： ## 次級章節</div><div class="line">表格（註1）：|一行|一行|疊|</div><div class="line">插入超連結： [超連結文字](網址) </div><div class="line">插入外部圖片： ![圖片描述](圖片網址)</div></pre></td></tr></table></figure></p>
+<p>參考：<a href="http://github.hopotwing.top/writing-hexo-blog-in-markdown/" target="_blank" rel="external">http://github.hopotwing.top/writing-hexo-blog-in-markdown/</a></p>
 <p><strong>5. 當產生分類頁或產生標籤頁</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// ~/themes/next/_config.yml</div><div class="line"></div><div class="line">menu:</div><div class="line">  home: /</div><div class="line">  categories: /categories</div><div class="line">  #about: /about           # About 頁面沒啟用</div><div class="line">  archives: /archives</div><div class="line">  tags: /tags</div><div class="line">  #commonweal: /404.html   # 公益 404 頁面不會顯示在目錄</div></pre></td></tr></table></figure>
 <p>並在 ~/source/ 底下建立相應的 /tags/ 或 /catagories/ 資料夾，並在裡面新增一個 index.md，以 tags 為例內容如下：</p>
