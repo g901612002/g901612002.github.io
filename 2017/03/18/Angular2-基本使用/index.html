@@ -6,14 +6,45 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: ng2 | 小魯蛇工程師雜記</title>
+  <title>Angular2 基本使用 | 小魯蛇工程師雜記</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小魯蛇工程師雜記">
-<meta property="og:url" content="http://yoursite.com/tags/ng2/index.html">
+  <meta name="description" content="假如有使用過ng1的話， 一定會很好奇 ng1 與 ng2 的使用差別以下來做一下介紹：
+1. 資料繫結的四種方法
+
+內嵌繫結：{ {property} }
+屬性繫結：[property]=&amp;#39;statement&amp;#39;
+事件繫結：(event)=&amp;#39;someMethod($event)&amp;#39;
+雙向繫結：[(ngModel)]=&amp;#39;property&amp;#39;
+
+123456">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular2 基本使用">
+<meta property="og:url" content="http://yoursite.com/2017/03/18/Angular2-基本使用/index.html">
 <meta property="og:site_name" content="小魯蛇工程師雜記">
+<meta property="og:description" content="假如有使用過ng1的話， 一定會很好奇 ng1 與 ng2 的使用差別以下來做一下介紹：
+1. 資料繫結的四種方法
+
+內嵌繫結：{ {property} }
+屬性繫結：[property]=&amp;#39;statement&amp;#39;
+事件繫結：(event)=&amp;#39;someMethod($event)&amp;#39;
+雙向繫結：[(ngModel)]=&amp;#39;property&amp;#39;
+
+123456">
+<meta property="og:image" content="https://angular.cn/resources/images/devguide/architecture/databinding.png">
+<meta property="og:image" content="https://angular.cn/resources/images/devguide/template-syntax/input-output.png">
+<meta property="og:updated_time" content="2017-03-18T16:58:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小魯蛇工程師雜記">
+<meta name="twitter:title" content="Angular2 基本使用">
+<meta name="twitter:description" content="假如有使用過ng1的話， 一定會很好奇 ng1 與 ng2 的使用差別以下來做一下介紹：
+1. 資料繫結的四種方法
+
+內嵌繫結：{ {property} }
+屬性繫結：[property]=&amp;#39;statement&amp;#39;
+事件繫結：(event)=&amp;#39;someMethod($event)&amp;#39;
+雙向繫結：[(ngModel)]=&amp;#39;property&amp;#39;
+
+123456">
+<meta name="twitter:image" content="https://angular.cn/resources/images/devguide/architecture/databinding.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -149,36 +180,97 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Angular2-基本使用" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Angular2 基本使用
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/18/Angular2-基本使用/" class="archive-article-date">
+
+        
+        <a href="/2017/03/18/Angular2-基本使用/" class="archive-article-date">
   	<time datetime="2017-03-18T15:50:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/18/Angular2-基本使用/">Angular2 基本使用</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>假如有使用過ng1的話， 一定會很好奇 ng1 與 ng2 的使用差別<br>以下來做一下介紹：</p>
+<h3 id="1-資料繫結的四種方法"><a href="#1-資料繫結的四種方法" class="headerlink" title="1. 資料繫結的四種方法"></a>1. 資料繫結的四種方法</h3><img src="https://angular.cn/resources/images/devguide/architecture/databinding.png" width="300" title="auto">
+<ul>
+<li>內嵌繫結：<code>{ {property} }</code></li>
+<li>屬性繫結：<code>[property]=&#39;statement&#39;</code></li>
+<li>事件繫結：<code>(event)=&#39;someMethod($event)&#39;</code></li>
+<li>雙向繫結：<code>[(ngModel)]=&#39;property&#39;</code></li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 內嵌繫結 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>&#123;&#123;employee.name&#125;&#125;<span class="tag">&lt;/<span class="name">h1</span>&gt;</span>  </div><div class="line"><span class="comment">&lt;!-- 屬性繫結 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">h1</span> [<span class="attr">innerText</span>]=<span class="string">"employee.name"</span>&gt;</span><span class="tag">&lt;/<span class="name">h1</span>&gt;</span> </div><div class="line"><span class="comment">&lt;!-- 雙向繫結 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> [(<span class="attr">ngModel</span>)]=<span class="string">"employee.name"</span>/&gt;</span> </div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 事件繫結 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> (<span class="attr">click</span>)=<span class="string">"save()"</span>&gt;</span>Save<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="2-範本參考變數-name"><a href="#2-範本參考變數-name" class="headerlink" title="2. 範本參考變數 (#name)"></a>2. 範本參考變數 (#name)</h3><ul>
+<li>會在範本內建立一個名為 name 的區域變數</li>
+<li>該 name 區域變數將只能用於目前元件範本中</li>
+<li>該 name 區域變數將會儲存該標籤的 DOM 物件</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> #<span class="attr">heroForm</span> (<span class="attr">ngSubmit</span>)=<span class="string">"onSubmit(heroForm)"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"username"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="3-三種-Angular-指令-Directives"><a href="#3-三種-Angular-指令-Directives" class="headerlink" title="3. 三種 Angular 指令 (Directives)"></a>3. 三種 Angular 指令 (Directives)</h3><ul>
+<li>元件型指令</li>
+<li>屬性型指令：這種指令會修改元素的外觀或行為 (NgStyle、NgClass)</li>
+<li>結構型指令：NgIf、NgFor 或 NgSwitch </li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 元件型指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">hero-detail</span>&gt;</span><span class="tag">&lt;/<span class="name">hero-detail</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 屬性型指令 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> [<span class="attr">ngClass</span>]=<span class="string">"&#123;'red':true&#125;"</span>&gt;</span>測試<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 結構型指令 --&gt;</span></div><div class="line"><span class="comment">&lt;!--  index 來取得變量，類似 index 的值，例如last、even和odd，請參閱 NgFor API 參考。 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">li</span> *<span class="attr">ngFor</span>=<span class="string">"let hero of heroes; let i=index;trackBy:hero?.id"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">hero-detail</span> *<span class="attr">ngIf</span>=<span class="string">"selectedHero"</span>&gt;</span><span class="tag">&lt;/<span class="name">hero-detail</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="4-元件的輸入輸出"><a href="#4-元件的輸入輸出" class="headerlink" title="4. 元件的輸入輸出"></a>4. 元件的輸入輸出</h3><img src="https://angular.cn/resources/images/devguide/template-syntax/input-output.png" width="600" title="auto">
+<ul>
+<li>傳入屬性<ul>
+<li>@Input() myProperty;</li>
+<li>外層元件請記得用「屬性繫結」傳入資料</li>
+</ul>
+</li>
+<li>傳出事件<ul>
+<li>建立傳出事件：@Output() myEvent = new EventEmitter();</li>
+<li>觸發事件中增加：this.myEvent.emit(data);</li>
+<li>外層元件請記得用「事件繫結」來接收傳出的資料</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Component, EventEmitter, Input, Output &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"></div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroDetailComponent</span> </span>&#123;</div><div class="line">@Input()  hero: Hero;</div><div class="line">@Output() deleteRequest = <span class="keyword">new</span> EventEmitter&lt;Hero&gt;();</div><div class="line">....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">hero-detail</span> [<span class="attr">hero</span>]=<span class="string">"currentHero"</span> (<span class="attr">deleteRequest</span>)=<span class="string">"deleteHero($event)"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">hero-detail</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="5-Pipes"><a href="#5-Pipes" class="headerlink" title="5. Pipes"></a>5. Pipes</h3><ul>
+<li>內建的 Pipes 元件<ul>
+<li>uppercase,lowercase</li>
+<li>date</li>
+<li>number,decimal,percent,currency</li>
+<li>json, slice<br><code>Angular 2 並沒有 FilterPipe 與 OrderByPipe 喔!</code></li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>&#123;&#123;data | json&#125;&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<p><br></p>
+<h3 id="6-Service"><a href="#6-Service" class="headerlink" title="6. Service"></a>6. Service</h3><p>幾乎任何東西都可以是一個服務。<br>服務是一個 class，具有專注的、明確的用途。它應該做一件特定的事情，並把它做好。<br>Angular 讓我們能輕易地把應用邏輯拆分到服務，並通過<code>依賴注入(DI)</code>來在組件中使用這些服務。</p>
+<ul>
+<li>設定注入<ul>
+<li>app.module 中：providers: [自定義Service]</li>
+</ul>
+</li>
+<li>注入服務元件到目前元件<ul>
+<li>constructor(自定義Service名稱: 自定義Service) {}</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> &#123; Injectable &#125; <span class="keyword">from</span> <span class="string">'@angular/core'</span>;</div><div class="line"></div><div class="line">@Injectable()</div><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">HeroService</span> </span>&#123;</div><div class="line">  private heroes: Hero[] = [];</div><div class="line"></div><div class="line">  <span class="keyword">constructor</span>(private backend: BackendService,private logger: Logger) &#123; &#125;</div><div class="line"></div><div class="line">  getHeroes() &#123;</div><div class="line">    <span class="keyword">this</span>.backend.getAll(Hero).then( <span class="function">(<span class="params">heroes: Hero[]</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.logger.log(<span class="string">`Fetched <span class="subst">$&#123;heroes.length&#125;</span> heroes.`</span>);</div><div class="line">      <span class="keyword">this</span>.heroes.push(...heroes); <span class="comment">// fill cache</span></div><div class="line">    &#125;);</div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.heroes;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,115 +290,37 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/17/Angular-cli/" class="archive-article-date">
-  	<time datetime="2017-03-17T15:37:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/17/Angular-cli/">Angular-cli</a>
-    </h1>
+  
+    <a href="/2017/03/17/Angular-cli/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Angular-cli</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">程式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ng2</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/12/Angular2-基本介紹/" class="archive-article-date">
-  	<time datetime="2017-03-11T18:28:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/12/Angular2-基本介紹/">Angular2-基本介紹</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">程式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ng2</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -329,9 +343,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
