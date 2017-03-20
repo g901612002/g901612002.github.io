@@ -6,14 +6,47 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 程式 | 小魯蛇工程師雜記</title>
+  <title>Angular2 路由 | 小魯蛇工程師雜記</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="小魯蛇工程師雜記">
-<meta property="og:url" content="http://yoursite.com/tags/程式/index.html">
+  <meta name="description" content="1. 呈現路由：
+方法：
+PathLocationStrategy（預設）
+採用 HTML5 History API 技術 （只支援到 Internet Explorer 10+ ）
+網址結構：http://localhost:4200/dashboard/
+
+
+HashLocationStrategy
+採用 HTML4 標準 Hash 網址格式 ( IE6+ )
+網址結構：http://loca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Angular2 路由">
+<meta property="og:url" content="http://yoursite.com/2017/03/20/Angular2-路由/index.html">
 <meta property="og:site_name" content="小魯蛇工程師雜記">
+<meta property="og:description" content="1. 呈現路由：
+方法：
+PathLocationStrategy（預設）
+採用 HTML5 History API 技術 （只支援到 Internet Explorer 10+ ）
+網址結構：http://localhost:4200/dashboard/
+
+
+HashLocationStrategy
+採用 HTML4 標準 Hash 網址格式 ( IE6+ )
+網址結構：http://loca">
+<meta property="og:image" content="https://i.imgur.com/f4HxFPy.png">
+<meta property="og:updated_time" content="2017-03-20T13:12:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小魯蛇工程師雜記">
+<meta name="twitter:title" content="Angular2 路由">
+<meta name="twitter:description" content="1. 呈現路由：
+方法：
+PathLocationStrategy（預設）
+採用 HTML5 History API 技術 （只支援到 Internet Explorer 10+ ）
+網址結構：http://localhost:4200/dashboard/
+
+
+HashLocationStrategy
+採用 HTML4 標準 Hash 網址格式 ( IE6+ )
+網址結構：http://loca">
+<meta name="twitter:image" content="https://i.imgur.com/f4HxFPy.png">
   
   
     <link rel="icon" href="/favicon.png">
@@ -149,36 +182,136 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Angular2-路由" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Angular2 路由
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/20/Angular2-路由/" class="archive-article-date">
+
+        
+        <a href="/2017/03/20/Angular2-路由/" class="archive-article-date">
   	<time datetime="2017-03-20T12:43:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-20</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/20/Angular2-路由/">Angular2 路由</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-呈現路由："><a href="#1-呈現路由：" class="headerlink" title="1. 呈現路由："></a>1. 呈現路由：</h2><ul>
+<li>方法：<ul>
+<li><strong>PathLocationStrategy（預設）</strong><ul>
+<li>採用 HTML5 History API 技術 （只支援到 Internet Explorer 10+ ）</li>
+<li>網址結構：<a href="http://localhost:4200/dashboard/" target="_blank" rel="external">http://localhost:4200/dashboard/</a></li>
+</ul>
+</li>
+<li><strong>HashLocationStrategy</strong><ul>
+<li>採用 HTML4 標準 Hash 網址格式 ( IE6+ )</li>
+<li>網址結構：<a href="http://localhost:4200/#/dashboard/" target="_blank" rel="external">http://localhost:4200/#/dashboard/</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// app-routing.module.ts</span></div><div class="line"></div><div class="line"><span class="comment">// 定義路由可以靠RouterModule.forRoot方法幫我們建立路由</span></div><div class="line">@NgModule(&#123;</div><div class="line">  <span class="attr">imports</span>: [RouterModule.forRoot(routes, &#123;</div><div class="line">    <span class="comment">// useHash: true, (使用 HashLocationStrategy )</span></div><div class="line">    <span class="comment">// enableTracing: true （ 啟用路由追蹤，在console.log中會顯示出來 ）</span></div><div class="line">  &#125;)],</div><div class="line">  <span class="attr">exports</span>: [RouterModule],</div><div class="line">  <span class="attr">providers</span>: []</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="2-路由設定"><a href="#2-路由設定" class="headerlink" title="2. 路由設定"></a>2. 路由設定</h2><ul>
+<li>重要的設定：<code>src/index.html裡面的&lt;basehref=&quot;/&quot;&gt;</code><ul>
+<li>記住！位置一定要放在最前面！(不然資料的位置會隨著url改變而跑掉)</li>
+</ul>
+</li>
+<li>放置元件的地方<ul>
+<li>路由插座(<code>&lt;router-outlet&gt;</code>)</li>
+</ul>
+</li>
+<li>路由連結套用 Active 樣式：<code>routerLinkActive=&quot;css樣式&quot;</code></li>
+<li>避免套用 routerLinkActive 到上層路徑：<code>[routerLinkActiveOptions]=&quot;{exact: true}&quot;</code></li>
+<li>導頁：<code>redirectTo</code><ul>
+<li>使用 redirectTo 時，一定要加上 patchMatch 屬性</li>
+<li>轉向路由最多只能轉向一次，不能從 /aaa 轉到 / 然後再轉向 /bbb</li>
+</ul>
+</li>
+<li>萬用路由：一定要放在最後一個路由定義中!</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 路由設定</span></div><div class="line"><span class="keyword">const</span> routes: Routes = [</div><div class="line">	&#123; <span class="attr">path</span>: <span class="string">''</span>, <span class="attr">redirectTo</span>: <span class="string">'/layout'</span>, <span class="attr">pathMatch</span>: <span class="string">'full'</span> &#125;, <span class="comment">//導頁</span></div><div class="line">	&#123; <span class="attr">path</span>: <span class="string">'layout'</span>, <span class="attr">component</span>: LayoutComponent &#125;,</div><div class="line">	&#123; <span class="attr">path</span>: <span class="string">'page2'</span>, <span class="attr">component</span>: Page2Component &#125;,</div><div class="line">	&#123; <span class="attr">path</span>: <span class="string">'**'</span>, <span class="attr">redirectTo</span>: <span class="string">'/'</span>, <span class="attr">pathMatch</span>: <span class="string">'full'</span> &#125; <span class="comment">// 萬用路由</span></div><div class="line">];</div></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="3-Router-服務元件"><a href="#3-Router-服務元件" class="headerlink" title="3.Router 服務元件"></a>3.Router 服務元件</h2><p>當網址發生改變，就會從Router中找出相對應的Route物件，<br>ex：ActivatedRoute(目前套用的路由)、RouterState(路由狀態)。</p>
+<ul>
+<li>可取得完整的路由資訊<ul>
+<li>config</li>
+<li>events</li>
+<li>navigated</li>
+</ul>
+</li>
+<li>可透過導覽 API 進行導覽<ul>
+<li>絕對位址導覽</li>
+<li>相對位址導覽 (相對於目前的路由的網址路徑)</li>
+</ul>
+</li>
+<li>Router 跟 Component 關係：<ul>
+<li>Component 是不斷的實例化跟摧毀</li>
+<li>Router 是不斷的存在更新</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">constructor</span>(private router: Router, private route: ActivatedRoute) &#123;&#125; </div><div class="line"><span class="comment">// 絕對位址導覽</span></div><div class="line"><span class="keyword">this</span>.router.navigateByUrl(<span class="string">'/home/1'</span>); <span class="comment">// 傳入字串</span></div><div class="line"><span class="keyword">this</span>.router.navigate([<span class="string">'home'</span>, <span class="string">'1'</span>]);</div><div class="line"></div><div class="line"><span class="comment">// 相對位址導覽 (相對於目前的路由的網址路徑)</span></div><div class="line"><span class="keyword">this</span>.router.navigate([<span class="string">'..'</span>, <span class="string">'1'</span>], &#123;</div><div class="line">	<span class="attr">relativeTo</span>: <span class="keyword">this</span>.route</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="4-Route-物件"><a href="#4-Route-物件" class="headerlink" title="4. Route 物件"></a>4. Route 物件</h2><img src="https://i.imgur.com/f4HxFPy.png" width="400" title="auto">
+<ul>
+<li><strong>path屬性：(必填)</strong><ul>
+<li><code>前面不需要加上斜線開頭(/)</code></li>
+<li><code>path加上:</code> 參數名稱來代表一個路由參數<ul>
+<li>設定路由參數，網址列上就一定要出現該參數值。</li>
+<li>如果網址路徑沒有傳入路由參數，該路由會比對失敗。</li>
+</ul>
+</li>
+<li>在 Component 中取得參數(載入：ActivatedRoute, Router)<ul>
+<li>範例:{ path: ‘hero/:id’, component: HeroDetailComponent } </li>
+<li>如果瀏覽器上的網址路徑為 /hero/33 時，路由參數 id 的值就會是 33</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>outlet：</strong> 指 component 中有兩個以上的 router-outlet，指定這個router網址是要給哪個 router-outlet 去做顯示。</li>
+<li><strong>canActivate &amp; canActivateChild：</strong> 我能不能進去拜訪這個頁面；假如是 true 就是可以進去，false 就是被拒絕。</li>
+<li><strong>canDeactivate：</strong> 我可不可以離開這個頁面；假如是 true 就是可以離開，false 就是不能。</li>
+<li><strong>canLoad：</strong> 與 loadChildren有關係，建議不要使用。</li>
+<li><strong>data &amp; resolve：</strong> 在進入頁面前，先把資料準備好，才會進入頁面。<ul>
+<li>data屬性：代表預計傳入元件的路由資料<ul>
+<li>路由參數是從網址路徑傳入ActivatedRoute物件(目前正被啟用的路由物件)</li>
+<li>路由資料是從路由定義傳入ActivatedRoute物件</li>
+<li><code>路由資料通常是唯讀/靜態的資料</code><ul>
+<li>例如頁面標題、權限角色、麵包屑…</li>
+</ul>
+</li>
+<li>動態的路由：透過resolveguard來取得動態資料</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- outlet 的實例 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"a"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">router-outlet</span> <span class="attr">name</span>=<span class="string">"b"</span>&gt;</span><span class="tag">&lt;/<span class="name">router-outlet</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Route 物件中path：前面不需要加上斜線開頭(/)</span></div><div class="line"><span class="comment">// id：路由參數</span></div><div class="line"><span class="comment">// data屬性，代表預計傳入元件的路由資料</span></div><div class="line">Route = &#123;<span class="attr">path</span>: <span class="string">'xxx/:id'</span>,<span class="attr">component</span>: xxxComponent ,<span class="attr">data</span>: &#123;&#125;&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// data 的取得</span></div><div class="line">ngOnInit() &#123;</div><div class="line">  <span class="keyword">this</span>.route.data</div><div class="line">    .subscribe(<span class="function">(<span class="params">data: &#123; crisis: Crisis &#125;</span>) =&gt;</span> &#123;</div><div class="line">      <span class="keyword">this</span>.editName = data.crisis.name;</div><div class="line">      <span class="keyword">this</span>.crisis = data.crisis;</div><div class="line">    &#125;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><br></p>
+<h2 id="5-Routes-物件"><a href="#5-Routes-物件" class="headerlink" title="5. Routes 物件"></a>5. Routes 物件</h2><ul>
+<li>是 Route 物件的集合 (陣列型態)</li>
+<li>陣列中的物件是有順序性的 <code>(每個Route(路由)順序很重要)</code></li>
+<li>設定是否允許進入路由 (例如: 實作權限管理) 或是否允許離開路由</li>
+</ul>
+<p><br></p>
+<h2 id="6-子路由"><a href="#6-子路由" class="headerlink" title="6. 子路由"></a>6. 子路由</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&#123; <span class="attr">path</span>: <span class="string">'charts'</span>, (component)</div><div class="line">children: [</div><div class="line">  <span class="comment">// 放置 Route 路由設定</span></div><div class="line">  &#123; <span class="attr">path</span>: <span class="string">'flot'</span>, <span class="attr">component</span>: FlotComponent &#125;</div><div class="line">] &#125;</div></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -198,207 +331,37 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/18/Angular2-基本使用/" class="archive-article-date">
-  	<time datetime="2017-03-18T15:50:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-18</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/18/Angular2-基本使用/">Angular2 基本使用</a>
-    </h1>
+  
+    <a href="/2017/03/18/Angular2-基本使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Angular2 基本使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">程式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ng2</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/17/Angular-cli/" class="archive-article-date">
-  	<time datetime="2017-03-17T15:37:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/17/Angular-cli/">Angular-cli</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">程式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ng2</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/12/TypeScript/" class="archive-article-date">
-  	<time datetime="2017-03-12T15:23:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/12/TypeScript/">TypeScript</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">程式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">typescript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/12/Angular2-基本介紹/" class="archive-article-date">
-  	<time datetime="2017-03-11T18:28:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/12/Angular2-基本介紹/">Angular2-基本介紹</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">筆記</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">程式</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ng2</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -421,9 +384,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
